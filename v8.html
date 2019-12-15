@@ -19,9 +19,6 @@
     <div class="masklayer" id="MaskLayer">
         <img class="img1" src="zhizhen.png">
     </div>
-    <!-- <div class="div1" id="weixintip">
-        <img class="img1" src="zhizhen.png">
-    </div> -->
     <span class="pattern left"><img src="https://ali-static.fir.im/download_pattern_left.png"></span>
     <span class="pattern right"><img src="https://ali-static.fir.im/download_pattern_right.png"></span>
 
@@ -34,13 +31,12 @@
                 <div class="table-container">
                     <div class="cell-container">
                         <div class="app-brief">
-                            <!--第一个v8图片 -->
                             <div class="icon-container wrapper">
                                 <i class="icon-icon_path bg-path"></i>
                                 <span class="icon">
-                                    <img src="https://ali-fir-pro-icon.fir.im/b0eff6f7cf3f6bac95d409c0f2cfb9b74284ef63?auth_key=1576387291-0-0-f78cad97aa01386c2a3b0a611517cfb6" itemprop="image">
+                                    <img src="v8144.png" itemprop="image">
                                   </span>
-                                <span class="qrcode" title=""><canvas width="200" height="200" style="display: none;"></canvas><img alt="Scan me!" src="qrcode.png" style="display: block;"></span>
+                                <span class="qrcode" title=""><canvas width="200" height="200" style="display: none;"></canvas><img alt="Scan me!" src="qrcodegithub.png" style="display: block;"></span>
                             </div>
                             <p class="release-type wrapper"></p>
                             <h1 class="name wrapper">
@@ -55,7 +51,12 @@
                                 <p>更新于: <span itemprop="datePublished">2019-12-13 21:20</span></p>
                             </div>
                             <div id="actions" class="actions type-ios">
-                                <button onclick="install()">下载安装</button>
+                                <button id="btn1" onclick="install()">下载安装</button>
+                                <button id="btn2" onclick="install()" disabled="" style="display:none; min-width: 43px; width: 43px; padding: 12px 0px; border-top-color: transparent; border-left-color: transparent;" class="loading">&nbsp;</button>
+                                <div id="btn3" style="display:none;">
+                                    <p>正在安装，请按 Home 键在桌面查看</p>
+                                    <p><a href="https://ali-static.fir.im/embedded.mobileprovision" class="trust">立即信任</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,8 +99,22 @@
             var u = navigator.userAgent;
             var ua = navigator.userAgent.toLowerCase();
             if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
+                let btn1 = document.getElementById("btn1");
+                btn1.style = 'display:none;';
+                let btn2 = document.getElementById("btn2");
+                btn2.style.display = '';
                 window.location.href = "https://weihot.oss-cn-shenzhen.aliyuncs.com/v820191215.apk";
             } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
+                let btn1 = document.getElementById("btn1");
+                btn1.style = 'display:none;';
+                let btn2 = document.getElementById("btn2");
+                btn2.style.display = '';
+                setTimeout(function() {
+                    let btn2 = document.getElementById("btn2");
+                    btn2.style = 'display:none;';
+                    let btn3 = document.getElementById("btn3");
+                    btn3.style.display = '';
+                }, 3000);
                 window.location.href = "itms-services://?action=download-manifest&url=https://weihot.oss-cn-shenzhen.aliyuncs.com/manifest.plist";
             } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
                 //alert('当前页面在微信中打开')
@@ -110,21 +125,11 @@
         initdata();
     </script>
     <style>
-        .div1 {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(192, 192, 192, 0.5)
-        }
-        
         .img1 {
             width: 100%;
             align-content: center;
         }
     </style>
-    <!-- <script src="https://ali-static.fir.im/qrcode.js"></script> -->
-    <!-- <script src="https://ali-static.fir.im/markup.js"></script> -->
-    <!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
-    <!-- <script src="download.js"></script> -->
 </body>
 
 </html>
