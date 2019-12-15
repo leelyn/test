@@ -78,18 +78,18 @@
             if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
                 let icon = document.getElementsByClassName("icon-ios")[0];
                 icon.className = "icon-android"
-                let child = document.getElementsByClassName("masklayer")[0];
-                child.parentNode.removeChild(child);
+                    // let child = document.getElementsByClassName("masklayer")[0];
+                    // child.parentNode.removeChild(child);
             } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
-                let child = document.getElementsByClassName("masklayer")[0];
-                child.parentNode.removeChild(child);
+                // let child = document.getElementsByClassName("masklayer")[0];
+                // child.parentNode.removeChild(child);
             } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
                 //alert('当前页面在微信中打开')
                 let child = document.getElementById("btn1");
                 child.style = 'display:none;';
             } else {
-                let child = document.getElementsByClassName("masklayer")[0];
-                child.parentNode.removeChild(child);
+                // let child = document.getElementsByClassName("masklayer")[0];
+                // child.parentNode.removeChild(child);
                 let icon = document.getElementsByClassName("icon-ios")[0];
                 icon.className = "icon-android"
             }
