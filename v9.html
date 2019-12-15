@@ -75,35 +75,33 @@
         function initdata() {
             var u = navigator.userAgent;
             var ua = navigator.userAgent.toLowerCase();
-            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
-                let icon = document.getElementsByClassName("icon-ios")[0];
-                icon.className = "icon-android"
-                    // let child = document.getElementsByClassName("masklayer")[0];
-                    // child.parentNode.removeChild(child);
-            } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
-                // let child = document.getElementsByClassName("masklayer")[0];
-                // child.parentNode.removeChild(child);
-                let child = document.getElementById("btn1");
-                child.style = 'display:none;';
-                alert(u + '---------' + ua)
-            } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
+            if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
                 //alert('当前页面在微信中打开')
                 let child = document.getElementById("btn1");
                 child.style = 'display:none;';
-            } else {
-                // let child = document.getElementsByClassName("masklayer")[0];
-                // child.parentNode.removeChild(child);
+            } else if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
                 let icon = document.getElementsByClassName("icon-ios")[0];
                 icon.className = "icon-android"
-                let child = document.getElementById("btn1");
-                child.style = 'display:none;';
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+            } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+                //alert(u + '---------' + ua)
+            } else {
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+                let icon = document.getElementsByClassName("icon-ios")[0];
+                icon.className = "icon-android"
             }
         }
 
         function install() {
             var u = navigator.userAgent;
             var ua = navigator.userAgent.toLowerCase();
-            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
+            if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
+                alert('当前页面是微信内置浏览器,无法下载')
+            } else if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
                 let btn1 = document.getElementById("btn1");
                 btn1.style = 'display:none;';
                 let btn2 = document.getElementById("btn2");
@@ -121,8 +119,6 @@
                     btn3.style.display = '';
                 }, 6000);
                 window.location.href = "itms-services://?action=download-manifest&url=https://weihot.oss-cn-shenzhen.aliyuncs.com/manifest.plist";
-            } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
-                //alert('当前页面在微信中打开')
             } else {
                 window.location.href = "https://weihot.oss-cn-shenzhen.aliyuncs.com/v820191215.apk";
             }
