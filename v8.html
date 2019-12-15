@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://ali-static.fir.im/assets/stylesheets/e3f4f7c3.download.css">
+    <title>V8棋牌</title>
+</head>
+
+<body class="">
+    <div class="masklayer" id="MaskLayer">
+        <img class="img1" src="zhizhen.png">
+    </div>
+    <!-- <div class="div1" id="weixintip">
+        <img class="img1" src="zhizhen.png">
+    </div> -->
+    <span class="pattern left"><img src="https://ali-static.fir.im/download_pattern_left.png"></span>
+    <span class="pattern right"><img src="https://ali-static.fir.im/download_pattern_right.png"></span>
+
+    <div class="out-container">
+        <div class="main">
+            <header itemscope="" itemtype="http://schema.org/SoftwareApplication">
+                <span style="display:none;" itemprop="description"></span>
+                <span style="display:none;" itemprop="operatingSystem">ios</span>
+                <span style="display:none;" itemprop="name">V8棋牌</span>
+                <div class="table-container">
+                    <div class="cell-container">
+                        <div class="app-brief">
+                            <!--第一个v8图片 -->
+                            <div class="icon-container wrapper">
+                                <i class="icon-icon_path bg-path"></i>
+                                <span class="icon">
+                                    <img src="https://ali-fir-pro-icon.fir.im/b0eff6f7cf3f6bac95d409c0f2cfb9b74284ef63?auth_key=1576387291-0-0-f78cad97aa01386c2a3b0a611517cfb6" itemprop="image">
+                                  </span>
+                                <span class="qrcode" title=""><canvas width="200" height="200" style="display: none;"></canvas><img alt="Scan me!" src="qrcode.png" style="display: block;"></span>
+                            </div>
+                            <p class="release-type wrapper"></p>
+                            <h1 class="name wrapper">
+                                <span class="icon-warp">
+                                <i class="icon-ios" id = "icontip"></i>
+                                  V8棋牌
+                                </span>
+                            </h1>
+                            <p class="scan-tips">扫描二维码下载<br>:&nbsp;&nbsp;<span class="text-black"></span></p>
+                            <div class="release-info">
+                                <p><span itemprop="softwareVersion">1.1 (Build 1.0)- 47.76 MB</span></p>
+                                <p>更新于: <span itemprop="datePublished">2019-12-13 21:20</span></p>
+                            </div>
+                            <div id="actions" class="actions type-ios">
+                                <button onclick="install()">下载安装</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new_layout">
+                </div>
+            </header>
+        </div>
+    </div>
+    <script type="text/template" id="loading">
+        <div class='loading-container'>
+            <h1>正在加载</h1>
+        </div>
+    </script>
+    <script>
+        function initdata() {
+            var u = navigator.userAgent;
+            var ua = navigator.userAgent.toLowerCase();
+            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
+                let icon = document.getElementsByClassName("icon-ios")[0];
+                icon.className = "icon-android"
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+            } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+            } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
+                //alert('当前页面在微信中打开')
+                let child = document.getElementById("actions");
+                child.parentNode.removeChild(child);
+            } else {
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
+                let icon = document.getElementsByClassName("icon-ios")[0];
+                icon.className = "icon-android"
+            }
+        }
+
+        function install() {
+            var u = navigator.userAgent;
+            var ua = navigator.userAgent.toLowerCase();
+            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) { // 判断安卓
+                window.location.href = "https://weihot.oss-cn-shenzhen.aliyuncs.com/v820191215.apk";
+            } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //ios终端// 判断iOS
+                window.location.href = "itms-services://?action=download-manifest&url=https://weihot.oss-cn-shenzhen.aliyuncs.com/manifest.plist";
+            } else if (ua.match(/MicroMessenger/i) == "micromessenger") { // 判断是否在微信内置浏览器打开
+                //alert('当前页面在微信中打开')
+            } else {
+                window.location.href = "https://weihot.oss-cn-shenzhen.aliyuncs.com/v820191215.apk";
+            }
+        }
+        initdata();
+    </script>
+    <style>
+        .div1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(192, 192, 192, 0.5)
+        }
+        
+        .img1 {
+            width: 100%;
+            align-content: center;
+        }
+    </style>
+    <!-- <script src="https://ali-static.fir.im/qrcode.js"></script> -->
+    <!-- <script src="https://ali-static.fir.im/markup.js"></script> -->
+    <!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+    <!-- <script src="download.js"></script> -->
+</body>
+
+</html>
