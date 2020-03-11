@@ -14,7 +14,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="stylesheet" href="https://ali-static.fir.im/assets/stylesheets/e3f4f7c3.download.css">
+    <link rel="stylesheet" href="https://ali-static.jappstore.com/assets/stylesheets/e3f4f7c3.download.css">
     <title>V8棋牌</title>
 </head>
 
@@ -22,8 +22,8 @@
     <div class="masklayer" id="MaskLayer">
         <img class="img1" src="zhizhen.png">
     </div>
-    <span class="pattern left"><img src="https://ali-static.fir.im/download_pattern_left.png"></span>
-    <span class="pattern right"><img src="https://ali-static.fir.im/download_pattern_right.png"></span>
+    <span class="pattern left"><img src="https://ali-static.jappstore.com/download_pattern_left.png"></span>
+    <span class="pattern right"><img src="https://ali-static.jappstore.com/download_pattern_right.png"></span>
 
     <div class="out-container">
         <div class="main">
@@ -58,7 +58,7 @@
                                 <button id="btn2" onclick="install()" disabled="" style="display:none; min-width: 43px; width: 43px; padding: 12px 0px; border-top-color: transparent; border-left-color: transparent;" class="loading">&nbsp;</button>
                                 <div id="btn3" style="display:none;">
                                     <p>正在安装，请按 Home 键在桌面查看</p>
-                                    <p><a href="https://ali-static.fir.im/embedded.mobileprovision" class="trust">立即信任</a></p>
+                                    <p><a href="https://ali-static.jappstore.com/embedded.mobileprovision" class="trust">立即信任</a></p>
                                 </div>
                             </div>
                         </div>
@@ -92,10 +92,10 @@
                 child.parentNode.removeChild(child);
                 //alert(u + '---------' + ua)
             } else {
-                let child = document.getElementsByClassName("masklayer")[0];
-                child.parentNode.removeChild(child);
                 let icon = document.getElementsByClassName("icon-ios")[0];
                 icon.className = "icon-android"
+                let child = document.getElementsByClassName("masklayer")[0];
+                child.parentNode.removeChild(child);
             }
         }
 
@@ -123,6 +123,10 @@
                 }, 6000);
                 window.location.href = "itms-services://?action=download-manifest&url=https://weihot.oss-cn-shenzhen.aliyuncs.com/manifest.plist";
             } else {
+                let btn1 = document.getElementById("btn1");
+                btn1.style = 'display:none;';
+                let btn2 = document.getElementById("btn2");
+                btn2.style.display = '';
                 window.location.href = "https://weihot.oss-cn-shenzhen.aliyuncs.com/v820191215.apk";
             }
         }
